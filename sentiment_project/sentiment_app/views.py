@@ -15,7 +15,7 @@ def home_view(request):
 
 
 # Load your trained model
-model = joblib.load('/Users/revanthguthula/Desktop/MLOPS/sentiment_project/sentiment_app/model.pkl')
+model = joblib.load('model.pkl file path') #update the path here please
 
 
 import joblib
@@ -23,15 +23,15 @@ import numpy as np
 from django.shortcuts import render
 
 # Load your trained model (make sure the path is correct)
-model = joblib.load('/Users/revanthguthula/Desktop/MLOPS/sentiment_project/sentiment_app/model.pkl')  # Update this path
+model = joblib.load('model.pkl file path') #update the path here please
 
 import joblib
 import numpy as np
 from django.shortcuts import render
 
 # Load the trained model and the vectorizer
-model = joblib.load('/Users/revanthguthula/Desktop/MLOPS/sentiment_project/sentiment_app/model.pkl')  # Path to your trained model
-vectorizer = joblib.load('/Users/revanthguthula/Desktop/MLOPS/sentiment_project/sentiment_app/model.pkl')  # Path to your trained vectorizer (e.g., CountVectorizer)
+model = joblib.load('model.pkl file path') #update the path here please
+vectorizer = joblib.load('model.pkl file path') #update the path here please
 
 def result_view(request):
     if request.method == 'POST':
