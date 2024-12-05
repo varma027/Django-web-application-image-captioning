@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sentiment Analysis Result</title>
+</head>
+<body>
+    <h1>Sentiment Analysis Result</h1>
+    {% if prediction %}
+        <p>The predicted sentiment is: <strong>{{ prediction }}</strong></p>
+    {% else %}
+        <p>No result found. Please try again.</p>
+    {% endif %}
+    <a href="{% url 'home' %}">Go back</a>
+</body>
+</html>
