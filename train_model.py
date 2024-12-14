@@ -1,31 +1,51 @@
-import pickle
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.naive_bayes import MultinomialNB
+from transformers import BlipProcessor, BlipForConditionalGeneration
+from PIL import Image
+import requests
+from io import BytesIO
+import torch
 
-# Step 1: Prepare training data
-# Example texts and their corresponding sentiment labels
-data = [
-    ("I love this product", "positive"),
-    ("This is a terrible product", "negative"),
-    ("It's okay, nothing special", "neutral"),
-    ("I am so happy with this", "positive"),
-    ("I hate this", "negative"),
-    ("Not bad, could be better", "neutral")
-]
+def generate_caption(image_path):
+    """
+    Generate a caption for the provided image.
 
-# Separate texts and labels
-texts, labels = zip(*data)
+    Args:
+        image_path (str): Path to the image file or URL.
 
-# Step 2: Convert text into a numerical format
-vectorizer = TfidfVectorizer()  # Converts text into TF-IDF weighted vectors
-X = vectorizer.fit_transform(texts)
+    Returns:
+        str: Generated caption or error message.
+    """
+    try:
+        # Load the image from a file or URL
+        if image_path.startswith("http"):
+            response = requests.get(image_path, stream=True)
+            response.raise_for_status()  # Ensure the request was successful
+            image = Image.open(BytesIO(response.content))
+        else:
+            image = Image.open(image_path)
 
-# Step 3: Train a machine learning model
-model = MultinomialNB()  # Naive Bayes classifier
-model.fit(X, labels)  # Train the model
+        # Ensure the image is in a valid format
+        image.verify()  # Check if it's a valid image
+        image = Image.open(image_path)  # Reopen after verification
 
-# Step 4: Save the model and vectorizer to files
-with open('model.pkl', 'wb') as model_file:
-    pickle.dump((model, vectorizer), model_file)
+        # Process the image
+        inputs = processor(images=image, return_tensors="pt")
+        outputs = model.generate(**inputs)
 
-print("Model trained and saved to 'model.pkl'")
+        # Decode the generated output
+        caption = processor.decode(outputs[0], skip_special_tokens=True)
+        return caption
+
+    except Exception as e:
+        return f"Error: {str(e)}"
+
+if __name__ == "__main__":
+    # Load the BLIP model and processor
+    processor = BlipProcessor.from_pretrained("Salesforce/blip-image-captioning-base")
+    model = BlipForConditionalGeneration.from_pretrained("Salesforce/blip-image-captioning-base")
+
+    # Input from the user
+    image_path = input("Enter the path or URL of the image: ").strip()
+
+    # Generate and display the caption
+    caption = generate_caption(image_path)
+    print(f"Generated Caption: {caption}")
