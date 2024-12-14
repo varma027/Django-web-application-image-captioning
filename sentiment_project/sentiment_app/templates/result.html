@@ -4,12 +4,9 @@
     <title>Sentiment Analysis Result</title>
 </head>
 <body>
-    <h1>Sentiment Analysis Result</h1>
-    {% if prediction %}
-        <p>The predicted sentiment is: <strong>{{ prediction }}</strong></p>
-    {% else %}
-        <p>No result found. Please try again.</p>
-    {% endif %}
-    <a href="{% url 'home' %}">Go back</a>
+    <h2>Generated Caption:</h2>
+<p>{{ caption }}</p>
+<a href="/">Upload another image</a>
+
 </body>
 </html>

@@ -4,11 +4,12 @@
     <title>Sentiment Analysis</title>
 </head>
 <body>
-    <h1>Enter Text for Sentiment Analysis</h1>
-    <form method="POST" action="{% url 'result' %}">
+    <h1>Enter image path for caption generation</h1>
+    <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
-        <textarea name="text_input" rows="4" cols="50"></textarea><br>
-        <button type="submit">Submit</button>
-    </form>
+        <label for="image">Upload an image:</label>
+        <input type="file" id="image" name="image" accept="image/*" required>
+        <button type="submit">Generate Caption</button>
+    </form>    
 </body>
 </html>
