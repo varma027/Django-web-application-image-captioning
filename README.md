@@ -29,14 +29,14 @@ This project is an intelligent web application that leverages the power of AI to
 
 ## 🖼️ Demo
 
-### Input Image
-![Input Image](input.png)
+### Input Images
+![Input Image 1](input.png)
+![Input Image 2](km2dgtv9607z.webp)
 
 ### Generated Caption Output
-The application processes the uploaded image and generates descriptive captions like:
-- "A scenic landscape with mountains and trees"
-- "A beautiful sunset over the horizon"
-- "A group of people enjoying outdoor activities"
+![Output Result](output.png)
+
+The application processes the uploaded images and generates descriptive captions. The output image shows the results of the AI captioning process.
 
 ## ⚙️ Tech Stack
 - **Languages**: Python 3.12+
