@@ -170,30 +170,9 @@ EXPOSE 8000
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
 ```
 
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ## 🙌 Author
 
 **Revanth Guthula**
 - 📧 Email: [revanthg2607@gmail.com](mailto:revanthg2607@gmail.com)
 - 🔗 LinkedIn: [rev2607](https://linkedin.com/in/rev2607)
 - 🌐 Portfolio: [www.revanth.cloud](https://www.revanth.cloud)
-- 🐙 GitHub: [@yourusername](https://github.com/yourusername)
-
----
-
-⭐ **Star this repository if you find it helpful!**
-
-🔗 **Connect with me for collaborations and questions.**
-
-
