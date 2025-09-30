@@ -172,7 +172,7 @@ CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
 
 ## 🙌 Author
 
-**Revanth Guthula**
-- 📧 Email: [revanthg2607@gmail.com](mailto:revanthg2607@gmail.com)
-- 🔗 LinkedIn: [rev2607](https://linkedin.com/in/rev2607)
-- 🌐 Portfolio: [www.revanth.cloud](https://www.revanth.cloud)
+**Nagendra Varma**
+- 📧 Email: [saivarma2747@gmail.com](mailto:saivarma2747@gmail.com)
+- 🔗 LinkedIn: [varma027](https://linkedin.com/in/varma027)
+
