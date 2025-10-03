@@ -172,7 +172,7 @@ CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
 
 ## 🙌 Author
 
-**Nagendra Varma**
+**Nagendra Varma Danthuluri**
 - 📧 Email: [saivarma2747@gmail.com](mailto:saivarma2747@gmail.com)
 - 🔗 LinkedIn: [varma027](https://linkedin.com/in/varma027)
 
